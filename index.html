@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Goblers Knob 2026 Cloud Live Book</title>
+<style>
+:root{--felt:#0b3d24;--felt2:#062414;--gold:#d9b14a;--gold2:#f4d77d;--cream:#fff7dc;--paper:#fff2c6;--ink:#132116;--red:#941b16;--green:#116139;--grey:#e9e5d8}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:linear-gradient(160deg,var(--felt),var(--felt2));color:var(--cream);font-size:16px;line-height:1.35;padding-bottom:92px}header{padding:15px 12px;text-align:center;border-bottom:1px solid rgba(217,177,74,.35);position:sticky;top:0;background:linear-gradient(160deg,var(--felt),var(--felt2));z-index:5}h1{font-size:23px;margin:0;color:var(--gold2)}header p{margin:5px 0 0;font-size:12px;opacity:.86}.wrap{max-width:760px;margin:0 auto;padding:12px}.tabs{position:fixed;left:0;right:0;bottom:0;background:#061f12;border-top:2px solid var(--gold);display:grid;grid-template-columns:repeat(5,1fr);z-index:10;padding-bottom:env(safe-area-inset-bottom)}.tabs button{appearance:none;border:0;background:transparent;color:var(--cream);font-weight:800;font-size:12px;padding:10px 2px;min-height:58px}.tabs button.active{background:var(--gold);color:#061f12}.screen{display:none;margin-bottom:18px}.screen.active{display:block}.card{background:rgba(255,255,255,.075);border:1px solid rgba(217,177,74,.35);border-radius:14px;padding:14px;margin:0 0 14px;box-shadow:0 6px 16px rgba(0,0,0,.22)}.card.paper{background:var(--paper);color:var(--ink);border-color:#c9a33e}h2{font-size:20px;margin:0 0 10px;color:var(--gold2)}.paper h2{color:var(--ink)}.notice{background:#fff2c6;color:#351313;border-left:5px solid var(--red);padding:11px 12px;border-radius:10px;margin:0 0 14px;font-size:14px}.ready{background:#d1fae5;color:#064e3b;border-left-color:#116139}.warn{background:#fee2e2;color:#7f1d1d}.kpis{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.kpi{background:#072617;border:1px solid rgba(217,177,74,.35);border-radius:12px;padding:12px;text-align:center}.kpi .label{font-size:12px;opacity:.76;text-transform:uppercase;letter-spacing:.5px}.kpi .value{font-size:23px;font-weight:900;color:var(--gold2);margin-top:4px;overflow-wrap:anywhere}.kpi.bad .value{color:#ffb4a8}.kpi.good .value{color:#a7f3d0}.market-row,.owe-row,.runner-row{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center;border-top:1px solid rgba(0,0,0,.13);padding:10px 0}.market-row:first-child,.owe-row:first-child,.runner-row:first-child{border-top:0}.name{font-weight:900}.small{font-size:12px;opacity:.74}.odds{font-size:24px;font-weight:900;color:var(--red)}.net.bad{color:var(--red);font-weight:900}.net.good{color:var(--green);font-weight:900}.form label{display:block;font-weight:900;margin:12px 0 6px;color:var(--ink)}select,input,textarea{width:100%;font-size:18px;border:2px solid #c5a449;border-radius:12px;background:#fffaf0;color:#111;padding:12px;min-height:48px;touch-action:manipulation}textarea{min-height:70px;resize:vertical}.actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}button{touch-action:manipulation}button.primary,button.secondary,button.danger{border:0;border-radius:12px;font-size:17px;font-weight:900;min-height:50px;padding:12px;cursor:pointer}button.primary{background:var(--green);color:white}button.secondary{background:#334155;color:white}button.danger{background:var(--red);color:white}.livebox{background:#061f12;color:var(--cream);border:2px solid var(--gold);border-radius:12px;padding:12px;margin:12px 0;font-size:16px}.livebox strong{font-size:30px;color:var(--gold2)}.table-wrap{overflow-x:auto;border-radius:12px;border:1px solid rgba(217,177,74,.35);-webkit-overflow-scrolling:touch}table{border-collapse:collapse;width:100%;min-width:760px;background:var(--paper);color:var(--ink)}th,td{padding:9px;border-bottom:1px solid #d2c389;text-align:left;font-size:14px;vertical-align:top}th{background:#d9b14a;color:#111}td.num{text-align:right;font-variant-numeric:tabular-nums}.delete-btn{background:var(--red);color:white;border:0;border-radius:8px;padding:7px 9px;font-weight:800;cursor:pointer}.setting{display:grid;grid-template-columns:1fr 130px;gap:10px;align-items:center;margin:12px 0}.setting input{font-size:16px;min-height:42px;padding:8px}.toast{position:fixed;left:14px;right:14px;bottom:86px;background:#071f13;color:#fff7dc;border:2px solid var(--gold);border-radius:12px;padding:12px;text-align:center;font-weight:900;z-index:20;display:none;box-shadow:0 12px 24px rgba(0,0,0,.4)}.footer-note{font-size:12px;opacity:.7;margin:12px 0 0;text-align:center}.copybox{white-space:pre-wrap;background:#061f12;color:#fff7dc;border-radius:12px;padding:12px;margin-top:10px;font-size:13px;max-height:280px;overflow:auto}.pillbox{display:grid;grid-template-columns:repeat(2,1fr);gap:7px}.pill{background:rgba(19,33,22,.08);border-radius:999px;padding:8px 10px;font-weight:700;text-align:center}@media(max-width:420px){.kpis{grid-template-columns:1fr 1fr}.kpi .value{font-size:20px}.actions{grid-template-columns:1fr}h1{font-size:20px}.wrap{padding:10px}.card{padding:12px}}
+</style>
+</head>
+<body>
+<header>
+  <h1>Goblers Knob 2026 Cloud Live Book</h1>
+  <p>Shared Netlify version. Bets sync across phones and laptops.</p>
+</header>
+<div class="wrap">
+  <div id="status" class="notice warn"><strong>Status:</strong> loading cloud book...</div>
+
+  <section id="dashboard" class="screen active">
+    <div class="card">
+      <h2>Book Snapshot</h2>
+      <div class="kpis">
+        <div class="kpi"><div class="label">Book Size</div><div class="value" id="kBook">$0</div></div>
+        <div class="kpi"><div class="label">Market %</div><div class="value" id="kMarket">140%</div></div>
+        <div class="kpi bad"><div class="label">Worst Result</div><div class="value" id="kWorst">$0</div></div>
+        <div class="kpi"><div class="label">Total Owing</div><div class="value" id="kOwing">$0</div></div>
+      </div>
+      <div class="actions"><button type="button" class="primary" id="refreshBtn1">Refresh Now</button><button type="button" class="secondary" id="copySummaryBtn">Copy Summary</button></div>
+    </div>
+    <div class="card paper"><h2>Current Market</h2><div id="marketList"></div></div>
+    <div class="card paper"><h2>Result If Each Player Wins</h2><div id="runnerResults"></div></div>
+  </section>
+
+  <section id="bet" class="screen">
+    <div class="card paper">
+      <h2>Bet Here</h2>
+      <div class="form">
+        <label for="adminCodeBet">Admin code</label>
+        <input id="adminCodeBet" type="password" placeholder="benson2026">
+        <label for="bettor">Bettor</label>
+        <select id="bettor"></select>
+        <label for="selection">Selection</label>
+        <select id="selection"></select>
+        <div class="livebox">Live odds now for selected runner:<br><strong id="liveOdds">$0.00</strong></div>
+        <label for="stake">Stake</label>
+        <input id="stake" type="number" inputmode="decimal" min="0" step="1" placeholder="Example: 50">
+        <label for="manualOdds">Manual locked odds, optional</label>
+        <input id="manualOdds" type="number" inputmode="decimal" min="1" step="0.01" placeholder="Blank locks current live odds">
+        <label for="notes">Notes</label>
+        <textarea id="notes" placeholder="Optional note"></textarea>
+        <div class="actions"><button type="button" class="primary" id="addBetBtn">Add Bet</button><button type="button" class="secondary" id="clearFormBtn">Clear</button></div>
+      </div>
+    </div>
+    <div class="card paper"><h2>Player Names</h2><div id="nameList" class="pillbox"></div></div>
+  </section>
+
+  <section id="bets" class="screen">
+    <div class="card"><h2>Bets To Date</h2><div class="small">This is the shared cloud ledger. Refresh any device to see the latest bets.</div></div>
+    <div class="table-wrap"><table id="betsTable"></table></div>
+  </section>
+
+  <section id="owe" class="screen">
+    <div class="card paper"><h2>What You Owe</h2><div class="small">Each player gets the free bet credit set in Settings.</div><div id="oweList"></div></div>
+  </section>
+
+  <section id="settings" class="screen">
+    <div class="card paper">
+      <h2>Settings</h2>
+      <label for="adminCodeSettings" style="font-weight:900">Admin code</label>
+      <input id="adminCodeSettings" type="password" placeholder="benson2026">
+      <div class="setting"><div><strong>Target market percentage</strong><div class="small">Default 140.</div></div><input id="targetPct" type="number" min="100" step="1"></div>
+      <div class="setting"><div><strong>New bet sensitivity</strong><div class="small">Lower means bets move markets faster.</div></div><input id="sensitivity" type="number" min="50" step="10"></div>
+      <div class="setting"><div><strong>Free bet credit</strong><div class="small">Default $50.</div></div><input id="freeCredit" type="number" min="0" step="1"></div>
+      <div class="actions"><button type="button" class="primary" id="saveSettingsBtn">Save Settings</button><button type="button" class="secondary" id="refreshBtn2">Refresh Now</button><button type="button" class="danger" id="resetBtn">Reset Book</button></div>
+      <div id="summaryBox" class="copybox" style="display:none"></div>
+      <div class="footer-note">Auto-refresh runs every 5 seconds while the app is open.</div>
+    </div>
+  </section>
+</div>
+<nav class="tabs" aria-label="App tabs">
+  <button class="active" type="button" data-tab="dashboard">Dashboard</button>
+  <button type="button" data-tab="bet">Bet Here</button>
+  <button type="button" data-tab="bets">Bets</button>
+  <button type="button" data-tab="owe">Owe</button>
+  <button type="button" data-tab="settings">Settings</button>
+</nav>
+<div id="toast" class="toast"></div>
+<script>
+(function(){
+  var API = '/.netlify/functions/book';
+  var state = { book:null, summary:null, loading:false };
+  function $(id){return document.getElementById(id)}
+  function esc(s){return String(s == null ? '' : s).replace(/[&<>\"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;'}[c] || c})}
+  function money(n){var v=Number(n||0);var sign=v<0?'-':'';return sign+'$'+Math.abs(v).toLocaleString(undefined,{maximumFractionDigits:0})}
+  function price(n){var v=Number(n||0);return '$'+v.toFixed(v>=20?0:2)}
+  function pct(n){return Number(n||0).toFixed(1)+'%'}
+  function toast(msg){var t=$('toast');t.textContent=msg;t.style.display='block';clearTimeout(toast.timer);toast.timer=setTimeout(function(){t.style.display='none'},2400)}
+  function status(msg, good){var el=$('status');el.className='notice '+(good?'ready':'warn');el.innerHTML='<strong>Status:</strong> '+esc(msg)}
+  function setTab(id){document.querySelectorAll('.screen').forEach(function(s){s.classList.remove('active')});document.querySelectorAll('.tabs button').forEach(function(b){b.classList.remove('active')});$(id).classList.add('active');document.querySelector('[data-tab="'+id+'"]').classList.add('active');if(history&&history.replaceState)history.replaceState(null,'','#'+id);window.scrollTo(0,0)}
+  function oddsMap(){return state.summary ? state.summary.odds : {}}
+  function updateLiveOdds(){var sel=$('selection').value;var om=oddsMap();$('liveOdds').textContent=price(om[sel]||0)}
+  async function apiGet(){var res=await fetch(API+'?t='+Date.now(),{cache:'no-store'});var data=await res.json();if(!res.ok||!data.ok)throw new Error(data.error||'Cloud error');return data}
+  async function apiPost(payload){var res=await fetch(API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload),cache:'no-store'});var data=await res.json();if(!res.ok||!data.ok)throw new Error(data.error||'Cloud error');return data}
+  async function refresh(silent){try{if(state.loading)return;state.loading=true;if(!silent)status('refreshing...',false);var data=await apiGet();state.book=data.book;state.summary=data.summary;render();status('cloud ready. Last refresh '+new Date().toLocaleTimeString(),true)}catch(e){status('cloud error: '+e.message,false);if(!silent)toast(e.message)}finally{state.loading=false}}
+  function render(){var book=state.book, summary=state.summary;if(!book||!summary)return;var players=book.players||[], bets=book.bets||[], om=summary.odds||{};var marketPct=0;players.forEach(function(p){marketPct += 100/(om[p.name]||999999)});var worst=(summary.results||[]).slice().sort(function(a,b){return a.net-b.net})[0];$('kBook').textContent=money(summary.bookSize);$('kMarket').textContent=pct(marketPct);$('kWorst').textContent=worst?worst.name+' '+money(worst.net):'$0';$('kOwing').textContent=money(summary.totalOwing);$('targetPct').value=book.settings.targetPct;$('sensitivity').value=book.settings.sensitivity;$('freeCredit').value=book.settings.freeCredit;
+    var namesHtml='', opts='';players.forEach(function(p){opts+='<option value="'+esc(p.name)+'">'+esc(p.name)+'</option>';namesHtml+='<div class="pill">'+esc(p.name)+'</div>'});if($('bettor').options.length===0){$('bettor').innerHTML=opts;$('selection').innerHTML=opts}$('nameList').innerHTML=namesHtml;
+    var market=players.slice().sort(function(a,b){return (om[a.name]||999)-(om[b.name]||999)});$('marketList').innerHTML=market.map(function(p,i){return '<div class="market-row"><div><div class="name">'+(i+1)+'. '+esc(p.name)+'</div><div class="small">Implied '+(100/(om[p.name]||999)).toFixed(1)+'%</div></div><div class="odds">'+price(om[p.name])+'</div></div>'}).join('');
+    $('runnerResults').innerHTML=(summary.results||[]).slice().sort(function(a,b){return a.net-b.net}).map(function(r){return '<div class="runner-row"><div><div class="name">'+esc(r.name)+'</div><div class="small">Payout exposure '+money(r.exposure)+'</div></div><div class="net '+(r.net<0?'bad':'good')+'">'+money(r.net)+'</div></div>'}).join('');
+    $('oweList').innerHTML=(summary.owe||[]).map(function(o){return '<div class="owe-row"><div><div class="name">'+esc(o.name)+'</div><div class="small">Stake '+money(o.stake)+' less credit '+money(o.credit)+'</div></div><div class="odds">'+money(o.owing)+'</div></div>'}).join('');
+    $('betsTable').innerHTML='<thead><tr><th>#</th><th>Bettor</th><th>Selection</th><th>Stake</th><th>Odds</th><th>Payout</th><th>Type</th><th>Notes</th><th></th></tr></thead><tbody>'+bets.map(function(b,i){return '<tr><td>'+(i+1)+'</td><td>'+esc(b.bettor)+'</td><td>'+esc(b.selection)+'</td><td class="num">'+money(b.stake)+'</td><td class="num">'+price(b.odds)+'</td><td class="num">'+money(Number(b.stake||0)*Number(b.odds||0))+'</td><td>'+(b.marketCount?'New':'Loaded')+'</td><td>'+esc(b.notes||'')+'</td><td><button class="delete-btn" data-id="'+esc(b.id)+'" type="button">Delete</button></td></tr>'}).join('')+'</tbody>';
+    updateLiveOdds();
+  }
+  async function addBet(){try{var adminCode=$('adminCodeBet').value.trim();var bettor=$('bettor').value;var selection=$('selection').value;var stake=Number($('stake').value);var odds=Number($('manualOdds').value);if(!adminCode){toast('Enter admin code');return}if(!stake||stake<=0){toast('Enter stake');return}status('adding bet...',false);var data=await apiPost({action:'addBet',adminCode:adminCode,bettor:bettor,selection:selection,stake:stake,odds:odds,notes:$('notes').value});state.book=data.book;state.summary=data.summary;render();status('bet added and synced',true);$('stake').value='';$('manualOdds').value='';$('notes').value='';setTab('bets');toast('Bet added')}catch(e){status('add failed: '+e.message,false);toast(e.message)}}
+  async function deleteBet(id){try{var adminCode=$('adminCodeSettings').value.trim() || $('adminCodeBet').value.trim();if(!adminCode){toast('Enter admin code in Bet Here or Settings');return}if(!confirm('Delete this bet?'))return;var data=await apiPost({action:'deleteBet',adminCode:adminCode,id:id});state.book=data.book;state.summary=data.summary;render();toast('Bet deleted')}catch(e){toast(e.message);status('delete failed: '+e.message,false)}}
+  async function saveSettings(){try{var adminCode=$('adminCodeSettings').value.trim();if(!adminCode){toast('Enter admin code');return}var data=await apiPost({action:'saveSettings',adminCode:adminCode,targetPct:Number($('targetPct').value),sensitivity:Number($('sensitivity').value),freeCredit:Number($('freeCredit').value)});state.book=data.book;state.summary=data.summary;render();toast('Settings saved');status('settings saved and synced',true)}catch(e){toast(e.message);status('settings failed: '+e.message,false)}}
+  async function resetBook(){try{var adminCode=$('adminCodeSettings').value.trim();if(!adminCode){toast('Enter admin code');return}if(!confirm('Reset the shared cloud book to the original loaded bets?'))return;var data=await apiPost({action:'reset',adminCode:adminCode});state.book=data.book;state.summary=data.summary;render();toast('Book reset');status('book reset and synced',true)}catch(e){toast(e.message);status('reset failed: '+e.message,false)}}
+  function summaryText(){var book=state.book, summary=state.summary;if(!book||!summary)return '';var s='Goblers Knob 2026 Live Book\n';s+='Book size: '+money(summary.bookSize)+'\n';s+='Total owing: '+money(summary.totalOwing)+'\n\nMarket\n';var om=summary.odds||{};book.players.slice().sort(function(a,b){return om[a.name]-om[b.name]}).forEach(function(p){s+=p.name+' '+price(om[p.name])+'\n'});s+='\nWhat You Owe\n';(summary.owe||[]).forEach(function(o){s+=o.name+': '+money(o.owing)+'\n'});return s}
+  function copySummary(){var s=summaryText();var box=$('summaryBox');if(box){box.style.display='block';box.textContent=s}if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(s).then(function(){toast('Summary copied')}).catch(function(){toast('Summary shown in Settings')});else toast('Summary shown in Settings')}
+  function bind(){document.querySelectorAll('.tabs button').forEach(function(b){b.addEventListener('click',function(){setTab(b.getAttribute('data-tab'))})});$('selection').addEventListener('change',updateLiveOdds);$('addBetBtn').addEventListener('click',addBet);$('clearFormBtn').addEventListener('click',function(){$('stake').value='';$('manualOdds').value='';$('notes').value='';updateLiveOdds();toast('Form cleared')});$('saveSettingsBtn').addEventListener('click',saveSettings);$('resetBtn').addEventListener('click',resetBook);$('refreshBtn1').addEventListener('click',function(){refresh(false)});$('refreshBtn2').addEventListener('click',function(){refresh(false)});$('copySummaryBtn').addEventListener('click',copySummary);$('betsTable').addEventListener('click',function(e){var id=e.target&&e.target.getAttribute('data-id');if(id)deleteBet(id)});var h=(location.hash||'').replace('#','');if(h&&$(h))setTab(h)}
+  bind();refresh(false);setInterval(function(){refresh(true)},5000);
+})();
+</script>
+</body>
+</html>

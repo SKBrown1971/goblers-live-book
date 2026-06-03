@@ -1,0 +1,13 @@
+{
+  "name": "goblers-knob-2026-cloud-live-book",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "echo 'Goblers cloud app ready'"
+  },
+  "dependencies": {
+    "@netlify/blobs": "latest"
+  },
+  "devDependencies": {}
+}
