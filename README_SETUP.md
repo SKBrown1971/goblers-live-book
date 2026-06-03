@@ -1,41 +1,32 @@
-# Goblers Knob 2026 Cloud Live Book setup
+# Goblers Knob 2026 Netlify Live Sync Project v2
 
-This is the live syncing Netlify version.
+This version uses the classic Netlify Function format: `netlify/functions/book.js`.
+That is more reliable than the earlier ESM `.mjs` version.
 
-## Files in this project
+## Upload checklist
 
-- `index.html`: the mobile betting app
-- `netlify/functions/book.mjs`: the cloud API
-- `package.json`: installs `@netlify/blobs`
-- `netlify.toml`: tells Netlify where to publish the app and functions
+Your GitHub repo root must contain exactly these items:
 
-## Deploy through GitHub and Netlify
+- `index.html`
+- `package.json`
+- `netlify.toml`
+- `README_SETUP.md`
+- `netlify/functions/book.js`
 
-1. Create a private GitHub repository called `goblers-live-book`.
-2. Upload the contents of this folder to the repository. Do not upload the zip itself. Upload `index.html`, `package.json`, `netlify.toml`, and the `netlify/functions/book.mjs` folder path.
-3. In Netlify, choose Add new site > Import an existing project.
-4. Choose GitHub and select the `goblers-live-book` repository.
-5. Use these build settings:
-   - Build command: `npm run build`
-   - Publish directory: `.`
-   - Functions directory: `netlify/functions`
-6. Deploy the site.
-7. Open the Netlify URL on your laptop and phone.
-8. The admin code is `benson2026` unless you set a different `ADMIN_CODE` environment variable in Netlify.
-9. Add a bet on one device, then press Refresh Now or wait about 5 seconds on the other device.
+Do not upload the zip file itself. Do not upload the outer folder. Upload the contents of this folder.
 
-## Optional security improvement
+## Netlify settings
 
-In Netlify, go to Site configuration > Environment variables and add:
+- Build command: `npm run build`
+- Publish directory: `.`
+- Functions directory: `netlify/functions`
 
-- Key: `ADMIN_CODE`
-- Value: your private code
+After deployment, this URL must return JSON:
 
-Then redeploy the site.
+`https://YOUR-SITE.netlify.app/.netlify/functions/book`
 
-## Notes
+It should start with:
 
-- This version stores the book in Netlify Blobs through the Netlify Function.
-- It is shared across devices.
-- It is not just local browser storage.
-- Do not use drag and drop deploy for this project unless Netlify successfully deploys the function and dependencies. GitHub deployment is the safer route.
+`{"ok":true`
+
+If it returns HTML or starts with `<!DOCTYPE`, the function was not deployed.
